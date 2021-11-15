@@ -186,7 +186,7 @@ namespace Yugi {
 
 		}
 #pragma endregion
-	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) { //all the components required for live training are disabled
 				searchBtn->Visible = false;
 				searchBtn->Enabled = false;
 				searchTextBox->Visible = false;
@@ -206,7 +206,7 @@ namespace Yugi {
 	//			 resetBtn->Visible = true;
 	//		 }
 
-	private: System::Void liveTrainBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void liveTrainBtn_Click(System::Object^  sender, System::EventArgs^  e) { //disable the previous components and enable the components required for live training
 				/*LiveTrain^ liveTrain = gcnew LiveTrain;
 				liveTrain->ShowDialog();*/
 				 aboutBtn->Visible = false;
@@ -228,7 +228,7 @@ namespace Yugi {
 				doneBtn->Visible = true;
 				doneBtn->Enabled = true;
 			 }
-	private: System::Void liveTestBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void liveTestBtn_Click(System::Object^  sender, System::EventArgs^  e) { //browse the wikipedia link for the detected word
 			// System::String^ str = gcnew String(res);
 			char *str1 = "start https://en.wikipedia.org/wiki/";
 			char *str2 = performLiveTesting();
@@ -239,14 +239,14 @@ namespace Yugi {
 			// Greeting->Text = str;
 			system(str3);
 		}
-private: System::Void aboutBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void aboutBtn_Click(System::Object^  sender, System::EventArgs^  e) { //for about section
 			About^ about = gcnew About;
 			about->ShowDialog();
 		 }
 private: System::Void resetBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-				start();		 
+				start(); //initial model training
 		 }
-private: System::Void searchBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void searchBtn_Click(System::Object^  sender, System::EventArgs^  e) { //search the word and display the number of recordings required
 				String^ strr = searchTextBox->Text;
 				msclr::interop::marshal_context context;
 				std::string str= context.marshal_as<std::string>(strr);
@@ -260,7 +260,7 @@ private: System::Void searchBtn_Click(System::Object^  sender, System::EventArgs
 private: System::Void recordBtn_Click(System::Object^  sender, System::EventArgs^  e) {
 				recordWords();
 		 }
-private: System::Void doneBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void doneBtn_Click(System::Object^  sender, System::EventArgs^  e) { //switch the interface to the previous menu
 			 performLiveTraining();
 			 aboutBtn->Visible = true;
 			aboutBtn->Enabled = true;
