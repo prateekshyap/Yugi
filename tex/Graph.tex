@@ -2,7 +2,7 @@
 \pagestyle{plain}
 \linespread{1.5}
 \usepackage[utf8]{inputenc}
-\usepackage{libertine}
+%\usepackage{libertine}
 \usepackage{graphicx}
 \usepackage{floatflt}
 \usepackage{blindtext}
@@ -109,14 +109,55 @@ Figure ~\ref{fig:fc} is a flowchart of the project. Those steps can be followed 
 We are using the famous Hidden Markov Model to store the speech properties. Hidden Markov Model is a probabilistic model which is used to explain or derive the probabilistic characteristic of any random process. When we apply log function to the spectral representation of the speech during reverse fourier transform, it is converted to cepstrum whose coefficients are steady because of application of log function and it represents the speech is a nice manner. This representation can be used as the speech property. We take all such cepstral coefficients and build a codebook which helps in generating the observation sequences. Codebook contains $10$ speech samples for each word.\\
 We use feed-forward model for modelling speech samples. While speaking, we speak a word from start to end. So, there is no need of backward movement. Also, the stress on current phoneme is more than moving to the next phoneme. Hence we use feed-forward model. Then while testing, we score each model using the forward process and pick the word with highest score as the result.\\
 Since, speech signals depend a lot on the environment, live testing might not be very good. But, if we train the model live and test it immediately, then we get significantly better accuracy.
+
 \section{Result}
-\subsection{Home page}
+\begin{figure}
+\includegraphics[scale=1.0]{homepage.png}
+\caption{Home Page}
+\label{fig:hp}
+\end{figure}
+\begin{figure}
+\includegraphics[scale=1.0]{about.png}
+\caption{About Section}
+\label{fig:about}
+\end{figure}
+\begin{figure}
+\includegraphics[scale=1.0]{searchPage.png}
+\caption{Live Training}
+\label{fig:train}
+\end{figure}
+\begin{figure}
+\includegraphics[scale=1.0]{existingWord.png}
+\caption{Existing Word Search}
+\label{fig:searchOld}
+\end{figure}
+\begin{figure}
+\includegraphics[scale=1.0]{newWord.png}
+\caption{New Word Search}
+\label{fig:searchNew}
+\end{figure}
+\begin{figure}
+\includegraphics[scale=0.7]{console.png}
+\caption{Recording Console}
+\label{fig:rc}
+\end{figure}
+\begin{figure}
+\includegraphics[scale=0.6]{wiki.png}
+\caption{Display of Webpage}
+\label{fig:wp}
+\end{figure}
+
+\subsection{Home Page}
+Figure ~\ref{fig:hp} shows the homepage of the project. If About button is clicked then Figure ~\ref{fig:about} will be displayed.
 
 \subsection{Live Testing}
+For live testing, corresponding button should be clicked. Then recording module will be opened which is showed in Figure ~\ref{fig:rc}. A word can be spoken and recorded for testing. The corresponding webpage will be displayed e.g. Figure ~\ref{fig:wp}.
 
 \subsection{Live Training}
+For live training, corresponding button should be clicked. Then Figure ~\ref{fig:train} will be displayed. A word can be entered. It will detect whether the word is already present i.e. Figure ~\ref{fig:searchOld} or new i.e. Figure ~\ref{fig:searchNew}. If the word is already present, then recording will be allowed once, otherwise ten times. For recording, the same Figure ~\ref{fig:rc} will be displayed. After recording, Done button can be clicked to get back to homepage i.e. Figure ~\ref{fig:hp}.
 
 \section{Source Code}
+A few files are too large. Hence the entire code is not added here. A few short files are added.
 \subsection{commonvar.h}
 \begin{lstlisting}
 
