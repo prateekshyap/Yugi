@@ -1,4 +1,4 @@
-18
+17
 aeroplane
 ambulance
 apple
@@ -16,4 +16,3 @@ tram
 truck
 orange
 taxi
-tractor
