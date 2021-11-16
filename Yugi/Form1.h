@@ -354,13 +354,8 @@ namespace Yugi {
 				searchBtn->Enabled = true ;
 				searchTextBox->Visible = true;
 				searchTextBox->Enabled = true;
+				searchTextBox->Text = "";
 				searchBarLabel->Visible = true;
-				/*searchLabel->Visible = true;
-				searchLabel->Enabled = true;*/
-				/*recordLabel->Visible = true;
-				recordLabel->Enabled = true;*/
-				/*recordBtn->Visible = true;
-				recordBtn->Enabled = true;*/
 				recordBtnLabel->Visible = false;
 				doneBtn->Visible = true;
 				doneBtn->Enabled = true;
