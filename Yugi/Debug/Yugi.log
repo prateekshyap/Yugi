@@ -1,7 +1,7 @@
-﻿Build started 11/16/2021 1:05:01 AM.
-     1>Project "E:\IITG\Courses\1st sem\Speech Processing\Projects\Yugi\Yugi\Yugi\Yugi.vcxproj" on node 2 (build target(s)).
+﻿Build started 11/16/2021 2:53:26 PM.
+     1>Project "E:\IITG\Courses\1st sem\Speech Processing\Projects\Yugi\Yugi\Yugi.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\Yugi.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\Yugi.unsuccessfulbuild".
        GenerateTargetFrameworkMonikerAttribute:
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
@@ -14,14 +14,14 @@
          All outputs are up-to-date.
        Link:
          All outputs are up-to-date.
-         Yugi.vcxproj -> E:\IITG\Courses\1st sem\Speech Processing\Projects\Yugi\Yugi\Debug\Yugi.exe
+         Yugi.vcxproj -> E:\IITG\Courses\1st sem\Speech Processing\Projects\Yugi\Debug\Yugi.exe
        MetaGen:
        Skipping target "MetaGen" because all output files are up-to-date with respect to the input files.
        FinalizeBuildStatus:
          Deleting file "Debug\Yugi.unsuccessfulbuild".
          Touching "Debug\Yugi.lastbuildstate".
-     1>Done Building Project "E:\IITG\Courses\1st sem\Speech Processing\Projects\Yugi\Yugi\Yugi\Yugi.vcxproj" (build target(s)).
+     1>Done Building Project "E:\IITG\Courses\1st sem\Speech Processing\Projects\Yugi\Yugi\Yugi.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.42
+Time Elapsed 00:00:01.30
