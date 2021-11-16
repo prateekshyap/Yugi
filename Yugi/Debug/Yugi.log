@@ -1,4 +1,4 @@
-﻿Build started 17-11-2021 00:28:51.
+﻿Build started 17-11-2021 01:04:40.
      1>Project "C:\workspace\Yugi\Yugi\Yugi.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Yugi.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -22,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.11
+Time Elapsed 00:00:00.16
