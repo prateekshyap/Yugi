@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="aboutText.Text" xml:space="preserve">
-    <value>He watched as the young man tried to impress everyone in the room with his intelligence. There was no doubt that he was smart. The fact that he was more intelligent than anyone else in the room could have been easily deduced, but nobody was really paying any attention due to the fact that it was also obvious that the young man only cared about his intelligence.</value>
+    <value>Hello, I am Yugi, your learning guide. I can teach you about various objects like vehicles, fruits, etc. You need to press start/reset button to train me first and it may take few minutes but don't worry you need to train me only once i.e., when you start the app for the first time. After that, if you even close the app and reopen, you don't need to train me again, you'll still be able to peform live testing. When you want to live train me, you have to provide your utterance 10 times for a new word, else only once. Press the "Done" button to update my existing vocabulary. Again, it may take few minutes to update my vocabulary. Thanks for your patience. 
+
+
+
+
+
+</value>
   </data>
 </root>

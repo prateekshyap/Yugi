@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 namespace Yugi {
 
@@ -37,6 +37,7 @@ namespace Yugi {
 	private: System::Windows::Forms::Button^  okBtn;
 	protected: 
 	private: System::Windows::Forms::TextBox^  aboutText;
+	private: System::Windows::Forms::Label^  label1;
 
 	private:
 		/// <summary>
@@ -54,33 +55,55 @@ namespace Yugi {
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(About::typeid));
 			this->okBtn = (gcnew System::Windows::Forms::Button());
 			this->aboutText = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// okBtn
 			// 
-			this->okBtn->Location = System::Drawing::Point(99, 216);
+			this->okBtn->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			this->okBtn->Font = (gcnew System::Drawing::Font(L"Cambria", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->okBtn->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->okBtn->Location = System::Drawing::Point(267, 435);
 			this->okBtn->Name = L"okBtn";
 			this->okBtn->Size = System::Drawing::Size(110, 45);
 			this->okBtn->TabIndex = 0;
 			this->okBtn->Text = L"OK";
-			this->okBtn->UseVisualStyleBackColor = true;
+			this->okBtn->UseVisualStyleBackColor = false;
 			this->okBtn->Click += gcnew System::EventHandler(this, &About::okBtn_Click);
 			// 
 			// aboutText
 			// 
+			this->aboutText->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->aboutText->Enabled = false;
-			this->aboutText->Location = System::Drawing::Point(28, 33);
+			this->aboutText->Font = (gcnew System::Drawing::Font(L"Cambria", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->aboutText->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->aboutText->Location = System::Drawing::Point(74, 66);
 			this->aboutText->Multiline = true;
 			this->aboutText->Name = L"aboutText";
-			this->aboutText->Size = System::Drawing::Size(274, 166);
+			this->aboutText->Size = System::Drawing::Size(507, 317);
 			this->aboutText->TabIndex = 1;
 			this->aboutText->Text = resources->GetString(L"aboutText.Text");
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Cambria", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(102, 508);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(443, 23);
+			this->label1->TabIndex = 2;
+			this->label1->Text = L"--->> Made with 💖 by Prateekshya and Rohan <<--";
 			// 
 			// About
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(330, 298);
+			this->BackColor = System::Drawing::SystemColors::Window;
+			this->ClientSize = System::Drawing::Size(658, 573);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->aboutText);
 			this->Controls->Add(this->okBtn);
 			this->Name = L"About";

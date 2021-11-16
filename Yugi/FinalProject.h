@@ -50,7 +50,9 @@ int trainFlag = 0;
 char trainUserString[128];
 
 void trainBeginningModel(int);
+// void generateTestReport(char *, char **, char **, int);
 int preProcess();
+//void postProcess();
 void trainNewModel();
 int searchWord(const char *);
 
@@ -87,31 +89,157 @@ void start()
 	for (i = 0; i < N; ++i)
 		beta[i] = new long double[T];
 
-	trainBeginningModel(0); //train the beginning model
+	//FILE * file = fopen("data/info.txt","r"); //open info.txt
+	//fscanf(file,"%d",&trainingStatus); //read from the file
+	//fclose(file);
+
+	//if (trainingStatus == 0) //if file says 0
+	//{
+	//	printf("Training the initial Model\n\n");
+	//	file = fopen("data/build.txt","r");
+	//	fscanf(file,"%d",&buildingStatus);
+	//	fclose(file);
+	//	trainBeginningModel(buildingStatus); //call the model training function
+	//	file = fopen("data/info.txt","w");
+	//	fprintf(file,"1"); //replace 0 with 1 to avoid training in further executions
+	//	fclose(file);
+	//	printf("\nTraining completed\n\n");
+	//}
+
+	trainBeginningModel(0);
+
+	////fill the file details
+	//file = fopen("data/D.txt","r");
+	//fscanf(file,"%d",&D);
+	//char * folder = "HMM/";
+	//char ** digits = new char * [D];
+	//for (d = 0; d < D; ++d)
+	//	digits[d] = (char *)malloc(sizeof(char *));
+	//for (d = 0; d < D; ++d)
+	//	fscanf(file,"%s",digits[d]);
+	//char ** files = NULL, ** dataFiles = NULL;
+	//fclose(file);
+	//dataFiles = new char * [R];
+	//for (r = 0; r < R; ++r)
+	//	dataFiles[r] = (char *)malloc(sizeof(char *));
+	//for (r = 0; r < R; ++r)
+	//	sprintf(dataFiles[r],"%d",r);
+	//files = new char * [4];
+	//for (r = 0; r < 3; ++r)
+	//	files[r] = (char *)malloc(sizeof(char *));
+	//files[0] = "A";
+	//files[1] = "B";
+	//files[2] = "Pi";
+
+	//operations
+	//while (true)
+	 //{
+		//printf("============================================================\n");
+		//printf("                   Tutorial for Kids\n");
+		//printf("============================================================\n");
+		//printf("1 - Training mode\n");
+		//printf("2 - Testing mode\n");
+		//printf("3 - Quit\n");
+		//printf("Enter the corresponding number-\n");
+
+		//scanf("%d",&userChoice);
+
+		//switch (userChoice)
+		//{
+		//case 1:
+	//		searchWord(digits);
+	//		if (trainFlag == 0) //existing word
+	//		{
+	//			sprintf(trainFileName,"HMM/%s/count.txt",trainUserString);
+	//			file = fopen(trainFileName,"r");
+	//			fscanf(file,"%d",&currTrainCount);
+	//			fclose(file);
+	//			sprintf(trainFileName,"HMM/%s/%d.txt",trainUserString,currTrainCount);
+	//			sprintf(command,"Recording_Module.exe %d data/o.wav %s",duration,trainFileName);
+	//			std :: system(command);
+	//			trainModel(trainUserString,range,trainFileName);
+	//		}
+	//		else //new word
+	//		{
+	//			printf("--------------Warning----------------\n");
+	//			printf("It will take a few minutes\n");
+	//			printf("Please record %d times\n",R);
+	//			sprintf(filePath,"HMM/%s",trainUserString);
+	//			mkdir(filePath);
+	//			for (i = 0; i < R; ++i)
+	//			{
+	//				printf("Enter 1 when you're ready to record\n");
+	//				scanf("%d",&readyStatus);
+	//				sprintf(command,"Recording_Module.exe %d data/o.wav %s/%d.txt",duration,filePath,i);
+	//				std :: system(command);
+	//				printf("%d files recorded\n",(i+1));
+	//			}
+
+	//			//update the set of words in file as well as in the array
+	//			file = fopen("data/D.txt","w");
+	//			++D;
+	//			fprintf(file,"%d\n",D);
+	//			for (i = 0; i < D-1; ++i)
+	//				fprintf(file,"%s\n",digits[i]);
+	//			fprintf(file,"%s\n",trainUserString);
+	//			fclose(file);
+	//			file = fopen("data/D.txt","r");
+	//			digits = new char * [D];
+	//			for (d = 0; d < D; ++d)
+	//				digits[d] = (char *)malloc(sizeof(char *));
+	//			fscanf(file,"%d",&D);
+	//			for (d = 0; d < D; ++d)
+	//				fscanf(file,"%s",digits[d]);
+	//			fclose(file);
+
+	//			//write bakis model in the folder
+	//			writeGeneralModel(filePath,R);
+
+	//			//train the model from the beginning along with the live trained existing words
+	//			range = preProcess();
+	//			trainNewModel();
+	//		}
+	//		break;
+
+	//	case 2:
+	//		testFileName = "data/o.txt";
+	//		sprintf(command,"Recording_Module.exe %d data/o.wav data/o.txt",duration);
+	//		std :: system(command);
+	//		recognize(folder, digits, files, dataFiles, D, R, range, testFileName);
+	//		printf("You spoke %s\n",resultWord);
+	//		/* Put image display feature here */
+	//		break;
+
+	//	case 3:
+	//		printf("Thank you for using the app.");
+	//		return 0;
+
+	//	default:
+	//		printf("Invalid input! Please try again!");
+	//	}
+	//}
 }
 
 //Live Training
-void performLiveTraining()
-{
+void performLiveTraining() {
 	FILE *file = NULL;
 	char trainFileName[256];
 	int range = preProcess();
 	int currTrainCount = 0;
-	if(trainFlag == 1) { //existing word
+	if(trainFlag == 1) {
 		sprintf(trainFileName,"HMM/%s/count.txt",trainUserString);
 		file = fopen(trainFileName,"r");
-		fscanf(file,"%d",&currTrainCount); //read how many training files are there currently
+		fscanf(file,"%d",&currTrainCount);
 		fclose(file);
-		sprintf(trainFileName,"HMM/%s/%d.txt",trainUserString,currTrainCount); //create the new file name
-		trainModel(trainUserString,range,trainFileName); //train the model
-	} else { //new word
+		sprintf(trainFileName,"HMM/%s/%d.txt",trainUserString,currTrainCount);
+		trainModel(trainUserString,range,trainFileName);
+	} else {
 		trainNewModel();	
 	}
 }
 
 //Live Training
-void recordWords()
-{
+void recordWords() {
 	char trainFileName[256], filePath[128];
 	FILE *file = NULL;
 	int currTrainCount = 0;
@@ -154,15 +282,20 @@ void recordWords()
 		sprintf(trainFileName,"HMM/%s/%d.txt",trainUserString,currTrainCount);
 		sprintf(command,"Recording_Module.exe %d data/o.wav %s",duration,trainFileName);
 		std :: system(command);
+		// trainModel(trainUserString,range,trainFileName);
 	}
 	else //new word
 	{
+		// printf("--------------Warning----------------\n");
+		// printf("It will take a few minutes\n");
+		// printf("Please record %d times\n",R);
 		sprintf(filePath,"HMM/%s",trainUserString);
 		mkdir(filePath);
 		for (i = 0; i < R; ++i)
 		{
 			sprintf(command,"Recording_Module.exe %d data/o.wav %s/%d.txt",duration,filePath,i);
 			std :: system(command);
+			// printf("%d files recorded\n",(i+1));
 		}
 
 		// update the set of words in file as well as in the array
@@ -173,16 +306,26 @@ void recordWords()
 			fprintf(file, "%s\n",digits[i]);
 		fprintf(file,"%s\n",trainUserString);
 		fclose(file);
+		/*file = fopen("data/D.txt","r");
+		digits = new char *[D];
+		for (d = 0; d < D; ++d)
+			digits[d] = (char *)malloc(sizeof(char *));
+		fscanf(file,"%d",&D);
+		for (d = 0; d < D; ++d)
+			fscanf(file,"%s",digits[d]);
+		fclose(file);*/
 
 		//write bakis model in the folder
 		writeGeneralModel(filePath,R);
+
+		//train the model from the beginning along with the live trained existing words
 		range = preProcess();
+		//// trainNewModel();
 	}
 }
 
 //Live Testing
-char * performLiveTesting()
-{
+char* performLiveTesting() {
 	char *testFileName = "data/o.txt";
 	char command[200];
 	int range = preProcess();
@@ -225,9 +368,10 @@ char * performLiveTesting()
 	files[0] = "A";
 	files[1] = "B";
 	files[2] = "Pi";
-	sprintf(command,"Recording_Module.exe %d data/o.wav data/o.txt",duration); //record
+	sprintf(command,"Recording_Module.exe %d data/o.wav data/o.txt",duration);
 	std :: system(command);
-	recognize(folder, digits, files, dataFiles, D, R, range, testFileName); //recognize
+	recognize(folder, digits, files, dataFiles, D, R, range, testFileName);
+	// printf("You spoke %s\n",resultWord);
 	return resultWord;
 }
 
@@ -246,14 +390,14 @@ int searchWord(const char *input)
 	trainFlag = 0;
 	for (i = 0; i < D; ++i)
 	{
-		if (strcmp(input, digits[i]) == 0) //if the word is present in array
+		if (strcmp(input, digits[i]) == 0)
 		{
-			trainFlag = 1; //mark flag
+			trainFlag = 1;
 			break;
 		}
 	}
 	fclose(file);
-	sprintf(trainUserString, "%s", input); //store the string in a global variable
+	sprintf(trainUserString, "%s", input);
 	return trainFlag;
 }
 

@@ -220,11 +220,24 @@ bool compareAndUpdateModel()
 	
 		//update pStar
 		pStar = pStarComplement;
+		//printf("%g\n",pStarComplement);
 
+		/*//reinitialize complement matrices
+		PiComplement = new long double [N];
+
+		AComplement = new long double * [N];
+		for (i = 0; i < N; ++i)
+			AComplement[i] = new long double[N];
+
+		BComplement = new long double * [N];
+		for (i = 0; i < N; ++i)
+			BComplement[i] = new long double[M];
+			*/
 		return true;
 	}
 	else
 	{
+		//printf("PStar updated- %g\n",pStar);
 		return false;
 	}
 }

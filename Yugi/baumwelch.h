@@ -163,4 +163,7 @@ void runBaumWelch()
 		}
 
 	ensureStochastic(); //for A and B both
+
+	/*compare lambda and lambdaComplement here*/
+
 }
