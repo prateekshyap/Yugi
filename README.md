@@ -1,8 +1,8 @@
 # Yugi
 
 A virtual assistant that can record the words spoken and show the corresponding webpage.<br>
-Live training by multiple speakers supported.<br>
-New words can be added.<br>
+Live training by multiple speakers is supported.<br>
+New words can be added for new as well as old speakers.<br>
 
 Started with the command based version which can be found [here](https://github.com/prateekshyap/Tutorial-for-kids)
 
