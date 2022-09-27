@@ -15,6 +15,24 @@ Started with the command based version which can be found [here](https://github.
 5. Then you can try live testing. Speak the word within 3 seconds. The corresponding webpage will be displayed.
 6. For live training, first write the word you want to train. If you're adding a new word, you'll have to record 10 times continuously.
 
+# Sample Output:
+1. Home page:<br>
+![homepage](https://github.com/prateekshyap/Yugi/blob/main/img/homepage.png)
+
+2. Recording page:<br>
+![record](https://github.com/prateekshyap/Yugi/blob/main/img/record.png)
+
+3. Wiki result:<br>
+![output](https://github.com/prateekshyap/Yugi/blob/main/img/output.png)
+
+# Video Report:
+
+
+https://user-images.githubusercontent.com/39868948/192550072-800fbac7-f0c8-4aef-93e1-ef40b0b75574.mp4
+
+
+# PDF Report: [Report](./Report.pdf)
+
 ## Suggestions or improvements?
 
 Fork this repository, make required changes and create a pull request.
