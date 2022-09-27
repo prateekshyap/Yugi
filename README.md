@@ -33,9 +33,18 @@ https://user-images.githubusercontent.com/39868948/192550072-800fbac7-f0c8-4aef-
 
 # PDF Report: [Report](./Report.pdf)
 
-## Suggestions or improvements?
+# Suggestions or improvements?
 
 Fork this repository, make required changes and create a pull request.
 
 ---------------------------------------------------------------------------------------------------
 A final project submitted for the course fulfilment requirement of __Speech Processing__ at IITG. Developed by [Rohan Jaiswal](https://github.com/therohanjaiswal) and [Prateekshya Priyadarshini](https://github.com/prateekshyap).
+
+# Other Mini Projects of Speech Recognition:
+1. [YES/NO Detection](https://github.com/prateekshyap/YES-NO-Detection)<br>
+A Simple project to detect two words i.e. Yes and No based on the fricatives.
+2. [Vowel Recognition](https://github.com/prateekshyap/Vowel-Recognition)<br>
+An application to detect the vowels spoken.
+3. [Finding Optimal Codebook](https://github.com/prateekshyap/Optimize-the-Codebook)<br>
+A mini project to find the optimal codebook using K-Means and LBG ALgorithms.
+4. [Command Version of Yugi](https://github.com/prateekshyap/Virtual-Assistant)
